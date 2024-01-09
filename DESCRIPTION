@@ -1,7 +1,7 @@
 Package: WeightedTreemaps
 Title: Generate and Plot Voronoi or Sunburst Treemaps from Hierarchical
         Data
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Michael", "Jahn", , "jahn@mpusp.mpg.de", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3913-153X")),
@@ -40,11 +40,11 @@ LazyData: true
 RoxygenNote: 7.2.3
 SystemRequirements: C++17
 NeedsCompilation: yes
-Packaged: 2023-12-13 15:31:30 UTC; michael
+Packaged: 2024-01-08 07:58:02 UTC; michael
 Author: Michael Jahn [aut, cre] (<https://orcid.org/0000-0002-3913-153X>),
   David Leslie [aut],
   Ahmadou Dicko [aut] (<https://orcid.org/0000-0002-9654-7582>),
   Paul Murrell [aut, cph] (<https://orcid.org/0000-0002-3224-8858>)
 Maintainer: Michael Jahn <jahn@mpusp.mpg.de>
 Repository: CRAN
-Date/Publication: 2023-12-13 18:00:02 UTC
+Date/Publication: 2024-01-09 10:20:09 UTC
