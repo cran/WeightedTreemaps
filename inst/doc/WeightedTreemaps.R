@@ -6,7 +6,7 @@ knitr::opts_chunk$set(
 )
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  devtools::install_github("m-jahn/WeightedTreemaps")
+# devtools::install_github("m-jahn/WeightedTreemaps")
 
 ## -----------------------------------------------------------------------------
 library(WeightedTreemaps)
@@ -16,97 +16,97 @@ data(mtcars)
 mtcars$car_name = gsub(" ", "\n", row.names(mtcars))
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  # generate treemap; set seed to obtain same pattern every time
-#  tm <- voronoiTreemap(
-#    data = mtcars,
-#    levels = c("gear", "car_name"),
-#    cell_size = "wt",
-#    shape = "rounded_rect",
-#    seed = 123
-#  )
+# # generate treemap; set seed to obtain same pattern every time
+# tm <- voronoiTreemap(
+#   data = mtcars,
+#   levels = c("gear", "car_name"),
+#   cell_size = "wt",
+#   shape = "rounded_rect",
+#   seed = 123
+# )
 
 ## ----fig.width = 5, fig.height = 5, out.width = "50%", fig.align = 'center', eval = FALSE----
-#  drawTreemap(tm, label_size = 2.5, label_color = "white")
+# drawTreemap(tm, label_size = 2.5, label_color = "white")
 
 ## ----fig.width = 9, fig.height = 9, out.width = "100%", fig.align = 'center', warning = FALSE, eval = FALSE----
-#  drawTreemap(tm, title = "treemap 1", label_size = 2,
-#    color_type = "categorical", color_level = 1,
-#    layout = c(2, 2), position = c(1, 1), legend = TRUE)
-#  
-#  drawTreemap(tm, title = "treemap 2", label_size = 2,
-#    color_type = "categorical", color_level = 2, border_size = 3,
-#    add = TRUE, layout = c(2, 2), position = c(1, 2), legend = TRUE)
-#  
-#  drawTreemap(tm, title = "treemap 3", label_size = 2,
-#    color_type = "both", color_level = 1,
-#    add = TRUE, layout = c(2, 2), position = c(2, 1), legend = TRUE)
-#  
-#  drawTreemap(tm, title = "treemap 4", label_size = 2,
-#    color_type = "cell_size", color_level = 2,
-#    color_palette = heat.colors(10),
-#    border_color = grey(0.4), label_color = grey(0.4),
-#    add = TRUE, layout = c(2, 2), position = c(2, 2),
-#    title_color = "black", legend = TRUE)
+# drawTreemap(tm, title = "treemap 1", label_size = 2,
+#   color_type = "categorical", color_level = 1,
+#   layout = c(2, 2), position = c(1, 1), legend = TRUE)
+# 
+# drawTreemap(tm, title = "treemap 2", label_size = 2,
+#   color_type = "categorical", color_level = 2, border_size = 3,
+#   add = TRUE, layout = c(2, 2), position = c(1, 2), legend = TRUE)
+# 
+# drawTreemap(tm, title = "treemap 3", label_size = 2,
+#   color_type = "both", color_level = 1,
+#   add = TRUE, layout = c(2, 2), position = c(2, 1), legend = TRUE)
+# 
+# drawTreemap(tm, title = "treemap 4", label_size = 2,
+#   color_type = "cell_size", color_level = 2,
+#   color_palette = heat.colors(10),
+#   border_color = grey(0.4), label_color = grey(0.4),
+#   add = TRUE, layout = c(2, 2), position = c(2, 2),
+#   title_color = "black", legend = TRUE)
 
 ## ----fig.width = 12, fig.height = 4, out.width = "100%", fig.align = 'center', eval = FALSE----
-#  convergence <- c("slow", "intermediate", "fast")
-#  
-#  for (i in 1:3) {
-#    tm <- voronoiTreemap(
-#      data = mtcars,
-#      levels = c("gear", "car_name"),
-#      cell_size = "wt",
-#      shape = "rounded_rect",
-#      seed = 123,
-#      convergence = convergence[i],
-#      verbose = TRUE
-#    )
-#    drawTreemap(
-#      tm,
-#      title = paste0("convergence = ", convergence[i]),
-#      label_size = 2.5,
-#      label_color = "white",
-#      layout = c(1, 3),
-#      position = c(1, i),
-#      add = ifelse(i == 1, FALSE, TRUE)
-#    )
-#  }
+# convergence <- c("slow", "intermediate", "fast")
+# 
+# for (i in 1:3) {
+#   tm <- voronoiTreemap(
+#     data = mtcars,
+#     levels = c("gear", "car_name"),
+#     cell_size = "wt",
+#     shape = "rounded_rect",
+#     seed = 123,
+#     convergence = convergence[i],
+#     verbose = TRUE
+#   )
+#   drawTreemap(
+#     tm,
+#     title = paste0("convergence = ", convergence[i]),
+#     label_size = 2.5,
+#     label_color = "white",
+#     layout = c(1, 3),
+#     position = c(1, i),
+#     add = ifelse(i == 1, FALSE, TRUE)
+#   )
+# }
 
 ## ----message = FALSE, error = FALSE, results = 'hide', eval = FALSE-----------
-#  # set seed to obtain same df every time
-#  set.seed(123)
-#  df <- data.frame(A = sample(10:100, 45))
-#  
-#  tm1 <- voronoiTreemap(
-#    data = df, levels = "A",
-#    cell_size = "A",
-#    shape = "rounded_rect",
-#    positioning = "random"
-#  )
-#  
-#  tm2 <- voronoiTreemap(
-#    data = df, levels = "A",
-#    cell_size = "A",
-#    shape = "rounded_rect",
-#    positioning = "regular"
-#  )
-#  
-#  tm3 <- voronoiTreemap(
-#    data = df, levels = "A",
-#    cell_size = "A",
-#    shape = "rounded_rect",
-#    positioning = "clustered"
-#  )
+# # set seed to obtain same df every time
+# set.seed(123)
+# df <- data.frame(A = sample(10:100, 45))
+# 
+# tm1 <- voronoiTreemap(
+#   data = df, levels = "A",
+#   cell_size = "A",
+#   shape = "rounded_rect",
+#   positioning = "random"
+# )
+# 
+# tm2 <- voronoiTreemap(
+#   data = df, levels = "A",
+#   cell_size = "A",
+#   shape = "rounded_rect",
+#   positioning = "regular"
+# )
+# 
+# tm3 <- voronoiTreemap(
+#   data = df, levels = "A",
+#   cell_size = "A",
+#   shape = "rounded_rect",
+#   positioning = "clustered"
+# )
 
 ## ----fig.width = 12, fig.height = 4, out.width = "100%", fig.align = 'center', warning = FALSE, eval = FALSE----
-#  drawTreemap(tm1, title = "positioning = 'random'", border_size = 3,
-#    layout = c(1,3), position = c(1, 1))
-#  
-#  drawTreemap(tm2, title = "positioning = 'regular'", border_size = 3,
-#    add = TRUE, layout = c(1,3), position = c(1, 2))
-#  
-#  drawTreemap(tm3, title = "positioning = 'clustered'", border_size = 3,
-#    add = TRUE, layout = c(1,3), position = c(1, 3))
+# drawTreemap(tm1, title = "positioning = 'random'", border_size = 3,
+#   layout = c(1,3), position = c(1, 1))
+# 
+# drawTreemap(tm2, title = "positioning = 'regular'", border_size = 3,
+#   add = TRUE, layout = c(1,3), position = c(1, 2))
+# 
+# drawTreemap(tm3, title = "positioning = 'clustered'", border_size = 3,
+#   add = TRUE, layout = c(1,3), position = c(1, 3))
 
 ## -----------------------------------------------------------------------------
 # different initial shapes, the more squared the better
@@ -124,19 +124,19 @@ oct_coord <- list(
 )
 
 ## ----message = FALSE, error = FALSE, results = 'hide', eval = FALSE-----------
-#  tm1 <- voronoiTreemap(data = df, levels = "A",
-#    shape = house_coords)
-#  
-#  tm2 <- voronoiTreemap(data = df, levels = "A",
-#    shape = rect_coords)
-#  
-#  tm3 <- voronoiTreemap(data = df, levels = "A",
-#    shape = oct_coord)
+# tm1 <- voronoiTreemap(data = df, levels = "A",
+#   shape = house_coords)
+# 
+# tm2 <- voronoiTreemap(data = df, levels = "A",
+#   shape = rect_coords)
+# 
+# tm3 <- voronoiTreemap(data = df, levels = "A",
+#   shape = oct_coord)
 
 ## ----fig.width = 12, fig.height = 4, out.width = "100%", fig.align = 'center', warning = FALSE, eval = FALSE----
-#  drawTreemap(tm1, layout = c(1,3), position = c(1, 1))
-#  drawTreemap(tm2, add = TRUE, layout = c(1,3), position = c(1, 2))
-#  drawTreemap(tm3, add = TRUE, layout = c(1,3), position = c(1, 3))
+# drawTreemap(tm1, layout = c(1,3), position = c(1, 1))
+# drawTreemap(tm2, add = TRUE, layout = c(1,3), position = c(1, 2))
+# drawTreemap(tm3, add = TRUE, layout = c(1,3), position = c(1, 3))
 
 ## -----------------------------------------------------------------------------
 # generate data frame
